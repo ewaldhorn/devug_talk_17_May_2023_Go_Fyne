@@ -23,5 +23,6 @@ func runApplication(title ...string) {
 	createSecondWindow(application)
 
 	// And now that everything is ready, launch the app!
+	// This blocks until the app closes, so it's best to call it last...
 	application.Run()
 }

@@ -25,7 +25,6 @@ func makeClockToggleButton(application fyne.App) *widget.Button {
 			clockWindow.SetOnClosed(func() {
 				// if we close this, reset the state correctly
 				clockWindow = nil
-				clockWindowHidden = true
 			})
 		} else {
 			if clockWindowHidden {
