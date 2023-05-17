@@ -22,7 +22,7 @@ func createClockWindow(application fyne.App) fyne.Window {
 	})
 	clockWindow.CenterOnScreen()
 
-	// now update the time every second
+	// now update the time every second, until the end of time, or the end of the app, at least
 	go func() {
 		for range time.Tick(time.Second) {
 			updateTime(clock)

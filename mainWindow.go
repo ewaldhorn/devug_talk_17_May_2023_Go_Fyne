@@ -1,9 +1,14 @@
 package main
 
 import (
+	"fmt"
 	"fyne.io/fyne/v2"
+	"fyne.io/fyne/v2/canvas"
 	"fyne.io/fyne/v2/container"
 	"fyne.io/fyne/v2/widget"
+	"image"
+	"image/png"
+	"os"
 )
 
 func makeClockToggleButton(application fyne.App) *widget.Button {
@@ -36,6 +41,27 @@ func makeClockToggleButton(application fyne.App) *widget.Button {
 	return button
 }
 
+func getGoLogoImage() image.Image {
+	imgFile, err := os.Open("./resources/go_logo_png.png")
+	defer imgFile.Close() // dirty dirty hack for demo
+
+	if err != nil {
+		fmt.Println("Oh snap! Where's the image dude?", err)
+	}
+
+	imgData, err := png.Decode(imgFile)
+
+	if err != nil {
+		fmt.Println("Ah no. The PNG is weird!", err)
+	}
+
+	return imgData.(image.Image)
+}
+func createGoLogoCanvasObject() fyne.CanvasObject {
+	logoImage := canvas.NewImageFromImage(getGoLogoImage())
+	logoImage.FillMode = canvas.ImageFillOriginal
+	return logoImage
+}
 func createMainWindow(windowTitle string, application fyne.App) {
 	clockButton := makeClockToggleButton(application)
 
@@ -45,6 +71,7 @@ func createMainWindow(windowTitle string, application fyne.App) {
 	mainWindow.SetContent(container.NewVBox(
 		widget.NewLabel("This is our super boring label. Yeah, it sucks."),
 		clockButton,
+		createGoLogoCanvasObject(),
 	))
 
 	// Let's set the size and position of the window
