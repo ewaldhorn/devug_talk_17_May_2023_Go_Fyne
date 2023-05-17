@@ -59,8 +59,7 @@ func getGoLogoImage() image.Image {
 	if err != nil {
 		fmt.Println("Ah no. The PNG is weird!", err)
 	}
-
-	return imgData.(image.Image)
+	return imgData
 }
 func createGoLogoCanvasObject() fyne.CanvasObject {
 	logoImage := canvas.NewImageFromImage(getGoLogoImage())
