@@ -12,3 +12,9 @@ language and the Fyne UI toolkit.
 
 To demonstrate the ability of Go to be used in flexible ways to development different styles of solutions. In this 
 instance, a desktop application.
+
+## Learning Go
+
+FreeCodeCamp have released an awesome tutorial [https://www.freecodecamp.org/news/go-golang-course/](https://www.freecodecamp.org/news/go-golang-course/)
+that teaches you Go from the ground up! I highly recommend putting some time aside and working through this if you are interested
+in the language.
