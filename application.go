@@ -2,10 +2,10 @@ package main
 
 import (
 	"fyne.io/fyne/v2/app"
-	"fyne.io/fyne/v2/widget"
 )
 
 func runApplication(title ...string) {
+	// Go's default parameter handling is meh
 	windowTitle := "Main Window"
 
 	if len(title) > 0 {
@@ -15,10 +15,13 @@ func runApplication(title ...string) {
 	// We need an application, to host all the windows...
 	// That's why it's a desktop APPLICATION doh! 🤣
 	application := app.New()
-	mainWindow := application.NewWindow(windowTitle)
 
-	mainWindow.SetContent(widget.NewLabel("This is our super boring label. Yeah, it sucks."))
-	mainWindow.Show()
+	// Let's create a main window, because you need one, right?
+	createMainWindow(windowTitle, application)
 
+	// What about another window? Gotta distract the users...
+	createSecondWindow(application)
+
+	// And now that everything is ready, launch the app!
 	application.Run()
 }
