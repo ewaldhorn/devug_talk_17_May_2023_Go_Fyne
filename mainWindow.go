@@ -76,6 +76,9 @@ func createMainWindow(windowTitle string, application fyne.App) {
 		widget.NewLabel("This is our super boring label. Yeah, it sucks."),
 		clockButton,
 		createGoLogoCanvasObject(),
+		widget.NewButton("What?", func() {
+			createAnotherWindow(application)
+		}),
 	))
 
 	// Let's set the size and position of the window
