@@ -22,6 +22,9 @@ func runApplication(title ...string) {
 	// What about another window? Gotta distract the users...
 	createSecondWindow(application)
 
+	// And for giggles, something that updates itself
+	createClockWindow(application)
+
 	// And now that everything is ready, launch the app!
 	application.Run()
 }
