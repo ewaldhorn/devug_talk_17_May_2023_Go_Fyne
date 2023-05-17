@@ -7,11 +7,11 @@ import (
 )
 
 func updateTime(clock *widget.Label) {
-	formattedTime := time.Now().Format("Current time 03:04:05")
+	formattedTime := time.Now().Format("The current time is 15:04:05.")
 	clock.SetText(formattedTime)
 }
 
-func createClockWindow(application fyne.App) {
+func createClockWindow(application fyne.App) fyne.Window {
 	clock := widget.NewLabel("")
 	updateTime(clock)
 	clockWindow := application.NewWindow("This is a clock")
@@ -29,4 +29,5 @@ func createClockWindow(application fyne.App) {
 	}()
 
 	clockWindow.Show()
+	return clockWindow
 }
