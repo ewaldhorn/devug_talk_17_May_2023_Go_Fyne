@@ -20,6 +20,7 @@ func createClockWindow(application fyne.App) fyne.Window {
 		Width:  250,
 		Height: 20,
 	})
+	clockWindow.CenterOnScreen()
 
 	// now update the time every second
 	go func() {

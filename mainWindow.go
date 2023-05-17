@@ -17,9 +17,8 @@ func makeClockToggleButton(application fyne.App) *widget.Button {
 			clockWindowHidden = false
 
 			// we have a new window, let's intercept the close action so that we can handle that
-			clockWindow.SetCloseIntercept(func() {
+			clockWindow.SetOnClosed(func() {
 				// if we close this, reset the state correctly
-				clockWindow.Close()
 				clockWindow = nil
 				clockWindowHidden = true
 			})
