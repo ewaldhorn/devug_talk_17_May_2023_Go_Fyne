@@ -14,9 +14,9 @@ See the README.md file for more information.
 */
 
 func main() {
-	fmt.Println("Starting DevUG Desktop Demo.")
+	fmt.Printf("Starting DevUG Desktop Demo.\n\n")
 
 	runApplication()
 
-	fmt.Println("Done.")
+	fmt.Printf("\nDone.\n")
 }

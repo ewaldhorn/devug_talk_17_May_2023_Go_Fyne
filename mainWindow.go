@@ -43,7 +43,13 @@ func makeClockToggleButton(application fyne.App) *widget.Button {
 
 func getGoLogoImage() image.Image {
 	imgFile, err := os.Open("./resources/go_logo_png.png")
-	defer imgFile.Close() // dirty dirty hack for demo
+
+	defer func(imgFile *os.File) {
+		err := imgFile.Close()
+		if err != nil {
+			fmt.Println("Closing the file went quite meh!", err)
+		}
+	}(imgFile)
 
 	if err != nil {
 		fmt.Println("Oh snap! Where's the image dude?", err)
