@@ -1,5 +1,7 @@
 # DevUG Talk on Go and Fyne desktop development
 
+Now also available on [YouTube](https://www.youtube.com/watch?v=ocEr6m4MgeE) - spicy!
+
 ## Technologies used
 
 - Go [https://go.dev/](https://go.dev/)
